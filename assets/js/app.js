@@ -88,7 +88,9 @@ if (pathURL == '/') {
 
   // * IF INFO PAGE
 } else if (pathURL == '/info/') {
+  const uuidd = getUrlParameter('uuid');
 
+  $('.qr-img').attr('src', 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&bgcolor=eee&data=https://frwaniya.pages.dev/info?uuid=' + uuidd);
 
 
 // Recieve data
@@ -98,7 +100,7 @@ fetch(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:j
   .then(text => {
     const json = JSON.parse(text.substr(47).slice(0, -2));
 
-    const uuidd = getUrlParameter('uuid');
+    
     var foundIndex = -1;
 
       json.table.rows.forEach(function (row, rowIndex) { 

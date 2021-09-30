@@ -34,6 +34,10 @@ section {
   margin: 1rem auto;
 }
 
+.hero .small-title {
+  font-weight: 600;
+}
+
 
 .hero .form-container {
 
@@ -99,7 +103,7 @@ section {
 }
 
 #footer a {
-  color: darkgray;
+  color: darkblue;
 }
 
 #info-form-container {

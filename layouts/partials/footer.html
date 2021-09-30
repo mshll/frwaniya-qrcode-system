@@ -9,3 +9,6 @@
 {{ $app := resources.Get "js/app.js" | minify | fingerprint "sha384"}}
 <script src="{{ $app.Permalink }}" integrity="{{ $app.Data.Integrity }}"></script>
 
+<!-- GoatCounter -->
+<script data-goatcounter="https://frwaniya.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
