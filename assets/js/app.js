@@ -81,7 +81,7 @@ if (pathURL == '/') {
   };
 }(jQuery));
 
-  $("#input1").inputFilter(function(value) {
+  $("#input1, #input3, #input4").inputFilter(function(value) {
     return /^\d*$/.test(value);    // Allow digits only, using a RegExp
   });
 
@@ -104,13 +104,14 @@ fetch(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:j
     var foundIndex = -1;
 
       json.table.rows.forEach(function (row, rowIndex) { 
-        console.log(row.c[1].v);
+        // console.log(row.c[1].v);
         if (row.c[1].v === uuidd) {
           foundIndex = rowIndex;
         }
        });
 
        if (foundIndex > -1) {
+        //  console.log('===========', json.table.rows[foundIndex].c ,'=============')
         json.table.rows[foundIndex].c.forEach(function (col, colIndex) { 
           console.log(col.v, colIndex);
          });

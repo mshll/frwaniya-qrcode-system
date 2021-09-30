@@ -48,15 +48,22 @@ section {
   padding: 1.5rem 2rem;
   position: relative;
   border-radius: 15px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  /* text-align: center; */
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
   min-width: 300px;
   /* min-height: 320px; */
+}
 
+@media (max-width: 576px) {
+  .hero .form-container {
+    width: 95vw;
+    padding: 1rem 1rem;
+  }
+}
+
+@media (max-width: 1060px) {
+  .hero .form-container {
+    width: 60vw;
+  }
 }
 
 .form-container .form-floating {
@@ -93,13 +100,13 @@ section {
 
 #footer {
   /* position: absolute; */
-  bottom: 0.1rem;
+  /* bottom: 0.1rem; */
   text-align: center;
   align-items: center;
   width: 100%;
   font-size: 0.8rem;
   font-weight: 700;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 #footer a {
@@ -107,10 +114,23 @@ section {
 }
 
 #info-form-container {
-  justify-content: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   text-align: right;
-  align-items: center;
+  align-content: space-around;
+  gap: .25rem;
+
 }
+
+.text-container {
+  align-items: flex-end;
+  justify-content: space-between;
+  /* background-color: red;
+  border: darkblue solid 2px !important; */
+  margin-right: 0;
+}
+
 
 .text-titles {
   flex: 1;
@@ -118,11 +138,11 @@ section {
 
 .text-rec {
   font-weight: 600;
-  flex: 3.6 !important;
+  flex: 2.5 !important;
 }
 
 .qr-note {
-  font-size: 0.3rem !important;
-  font-weight: 600;
+  font-size: 0.6rem !important;
+  font-weight: 800;
   margin-top: 1rem;
 }
