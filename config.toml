@@ -1,0 +1,22 @@
+baseURL = "https://frwaniya.pages.dev/"
+title = "مدرسة الفروانية الإبتدائية للبنات"
+
+
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"] # removes console error for above
+
+
+############################# Plugins ##########################
+# css plugins
+[[params.plugins.css]]
+link = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.rtl.min.css"
+[[params.plugins.css]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+[[params.plugins.css]]
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+
+# js plugins
+[[params.plugins.js]]
+link = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" # JQuery
+[[params.plugins.js]]
+link = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" # Bootstrap

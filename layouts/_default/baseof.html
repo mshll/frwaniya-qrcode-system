@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ .Title }} | {{ .Site.Title }}</title>
+
+    {{ "<!-- plugins -->" | safeHTML }}
+	  {{ range site.Params.plugins.css }}
+	  <link rel="stylesheet" href="{{ .link | absURL }}">
+	  {{ end }}
+
+    {{ $styles := resources.Get "css/style.css" | minify }}
+	  <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div class="content">
+      {{ block "main" . -}}{{- end }}
+    </div>
+
+    {{- partial "footer.html" . -}}
+  </body>
+</html>

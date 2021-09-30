@@ -1,0 +1,11 @@
+{{"<!-- Footer -->" | safeHTML}}
+
+{{ "<!-- JS Plugins -->" | safeHTML }}
+{{ range site.Params.plugins.js}}
+<script src="{{ .link | absURL }}"></script>
+{{ end }}
+
+{{ "<!-- Main Script -->" | safeHTML }}
+{{ $app := resources.Get "js/app.js" | minify | fingerprint "sha384"}}
+<script src="{{ $app.Permalink }}" integrity="{{ $app.Data.Integrity }}"></script>
+

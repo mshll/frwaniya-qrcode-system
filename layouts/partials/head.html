@@ -1,0 +1,66 @@
+<head lang="{{ .Lang }}">
+	{{ "<!-- Site made by Meshal (https://mshl.me) -->" | safeHTML }}
+	<meta charset="utf-8">
+	{{ "<!-- SEO -->" | safeHTML }}
+	{{ partial "seo_schema" . }}
+	<title>{{ .Title }}</title>
+	{{ "<!-- mobile responsive meta -->" | safeHTML }}
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+	{{ with site.Params.author }}
+	<meta name="author" content="{{ . }}">{{ end }}
+	<meta name="keywords" content='{{ if isset .Site.Params "tags" }}{{ range .Site.Params.tags }} {{ . }},{{ end }}{{ end }} Developer'>
+	
+	<link rel="canonical" href="{{ .Permalink }}" />
+	
+	{{ "<!-- plugins -->" | safeHTML }}
+	{{ range site.Params.plugins.css }}
+	<link rel="stylesheet" href="{{ .link | absURL }}">
+	{{ end }}
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+	
+	<!-- Pageclip CSS -->
+	<link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+	
+	{{"<!-- Stylesheets -->"| safeHTML }}
+	{{ $styles := resources.Get "css/style.css" | minify }}
+	<link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
+	{{ $custom := resources.Get "css/custom.css" | minify }}
+	<link rel="stylesheet" href="{{ $custom.Permalink }}" media="screen">
+	
+	<!-- SASS -->
+	{{ $scss := resources.Get "sass/main.scss" }}
+	{{ $options := (dict "outputStyle" "compressed") }}
+	{{ $style := $scss | resources.ToCSS | resources.Fingerprint | minify }}
+	<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+	
+	{{ $sass := resources.Get "sass/sass.sass" }}
+	{{ $options := (dict "outputStyle" "compressed") }}
+	{{ $style := $sass | resources.ToCSS | resources.Fingerprint | minify }}
+	<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
+
+	{{ "<!--Favicon-->" | safeHTML }}
+	<link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon.png?v=2">
+	<link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png?v=2">
+	<link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png?v=2">
+	<link rel="manifest" href="images/favicons/site.webmanifest?v=2">
+	<link rel="mask-icon" href="images/favicons/safari-pinned-tab.svg?v=2" color="#333333">
+	<link rel="shortcut icon" href="images/favicons/favicon.ico?v=2">
+	<meta name="msapplication-TileColor" content="#333333">
+	<meta name="msapplication-config" content="images/favicons/browserconfig.xml?v=2">
+	<meta name="theme-color" content="#000000">
+
+	<meta name="robots" content="index,follow" /> 
+	<meta name="googlebot" content="index,follow" />
+</head>
+
+<!-- Grain bg -->
+<div id="grain-wrapper" style="background-color: transparent; pointer-events: none;"></div>
+
+<!-- back to top -->
+<div class="progress-wrap">
+	<i class="btot fas fa-chevron-up"></i>
+	<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+	</svg>
+</div>

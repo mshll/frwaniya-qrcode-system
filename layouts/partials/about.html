@@ -1,0 +1,59 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.about.about.enable }}
+{{ with $data.about.about }}
+{{"<!-- Start About Section -->" | safeHTML}}
+
+<!-- <hr style="color: #fff; opacity: 0.05;"> -->
+<section class="about section" id="about">
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				{{"<!-- about section title -->" | safeHTML}}
+				<div class="title text-center" data-aos="fade-up">
+					<div class="heading-1"><h2 class="heading-style-1 alt-font weight-8">About</h2></div>
+				</div>
+				
+				{{"<!-- /about section title -->" | safeHTML}}
+			</div>
+		</div>
+		
+		
+		
+		<div class="row justify-content-center">
+			
+			<div class="col-lg-8 col-md-8 col-sm-auto">
+				<h2 data-aos="fade-up"><span id='text-hello-world'></span><div class='console-underscore' id='console-hw'>&#95;</div></h2>
+				<p data-aos="fade-up" class="big">A computer engineering student currently pursuing a bachelor's degree at <a href="https://www.pdx.edu" target="_blank" class="link-underline">Portland State University</a>. <br> I do front-end web developement and iOS developement.</p>
+				
+				<h3 data-aos="fade-up" class="mt-5">Technical Skills</h3>
+<!--				<ul class="tags list-group list-group-horizontal">-->
+<!--					{{ range site.Params.clang }}-->
+<!--					<li class="tag" style="--color: {{ .color }};">-->
+<!--						<i>{{ .name }}</i>-->
+<!--					</li>-->
+<!--					{{ end }}-->
+<!--				</ul>-->
+				<p class="big">
+					{{ $.Scratch.Set "about_aos_delay" 150 }}
+					{{ range site.Params.clang }}
+					{{ $.Scratch.Set "about_aos_delay" (add ($.Scratch.Get "about_aos_delay") 50) }}
+					<span data-aos="fade-up" data-aos-delay='{{$.Scratch.Get "about_aos_delay"}}' class="badge rounded-pill {{ .code }} mx-1 mb-3"><i class="{{ .icon }}"></i>&nbsp; {{ .name }}</span>
+					{{ end }}
+				</p>
+				
+				<p data-aos="fade-up" class="mt-2 big"> You can get in touch with me at  
+					<a href="mailto:contact@mshl.me" class="about-mail link-underline weight-6">contact@mshl.me</a>,
+					<br> or through this
+					<a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#contactModal" class="about-mail link-underline weight-6">contact form</a>.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	
+</section>
+{{"<!-- /about -->" | safeHTML}}
+{{ end }}
+{{ end }}

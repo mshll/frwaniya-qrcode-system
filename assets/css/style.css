@@ -1,0 +1,124 @@
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-txt);
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Noto Kufi Arabic', sans-serif;
+  direction: rtl;
+}
+section {
+  position: relative;
+}
+:root {
+  --clr-bg: #eee;
+  --clr-txt: #111;
+  --clr-txt2: #211f1b;
+}
+* {
+  transition: all 0.3;
+  z-index: 0;
+}
+
+.hero {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  font-weight: 500;
+}
+
+.hero .main-title {
+  font-weight: 800;
+  margin: 1rem auto;
+}
+
+
+.hero .form-container {
+
+  width: 40vw;
+  /* height: 50vh; */
+  background-color: #fff;
+  margin: 2rem;
+  padding: 1.5rem 2rem;
+  position: relative;
+  border-radius: 15px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  /* text-align: center; */
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  min-width: 300px;
+  /* min-height: 320px; */
+
+}
+
+.form-container .form-floating {
+  margin: 1rem auto;
+}
+
+.form-container .form-control {
+  background-color: #eee;
+  border-radius: 10px;
+  border: none;
+}
+
+.form-floating>label {
+  color: darkgray;
+}
+
+.btn-form {
+  background-color: transparent;
+  font-weight: 700;
+  border: solid 1.5px darkblue;
+  padding: 0.5rem 2rem;
+  border-radius: 50rem;
+}
+
+.btn-form:hover {
+  background-color: darkblue;
+  color: #fff;
+}
+
+.form-status-error,
+.form-status-success {
+  display: none;
+}
+
+#footer {
+  /* position: absolute; */
+  bottom: 0.1rem;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-top: 3rem;
+}
+
+#footer a {
+  color: darkgray;
+}
+
+#info-form-container {
+  justify-content: right;
+  text-align: right;
+  align-items: center;
+}
+
+.text-titles {
+  flex: 1;
+}
+
+.text-rec {
+  font-weight: 600;
+  flex: 3.6 !important;
+}
+
+.qr-note {
+  font-size: 0.3rem !important;
+  font-weight: 600;
+  margin-top: 1rem;
+}
