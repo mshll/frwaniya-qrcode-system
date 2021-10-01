@@ -84,6 +84,19 @@ $(document).ready(function () {
 
 		$(".qr-img").attr("src", "https://api.qrserver.com/v1/create-qr-code/?size=150x150&bgcolor=fff&data=https://frwaniya.pages.dev/info?uuid=" + uuidd);
 
+		$(".qr-img").on("load", function () {
+			// console.log("!! QR CODE LOADED !!");
+			$("#qr-spinner").remove();
+			$(".qr-note").removeClass("d-none");
+		});
+		$(".qr-img").on("error", function () {
+			// console.log("?? QR CODE FAILED ??");
+			$("#qr-spinner").remove();
+			$(".qr-note").html("حدث خطأ اثناء إنشاء الباركود. يرجى تسجيل رابط هذه الصفحة والمحاولة مرةً اخرى.");
+			$(".qr-note").removeClass("d-none");
+			$(".qr-note").css("color", "darkred");
+		});
+
 		// Recieve data
 		const spreadsheetId = "1-9PVqqaqHI0Y8jAEg6wIrbxM9fkJUjdubmnLu8EDqvA";
 		fetch(`https://docs.google.com/spreadsheets/d/${spreadsheetId}/gviz/tq?tqx=out:json`)
@@ -91,7 +104,7 @@ $(document).ready(function () {
 			.then((text) => {
 				const json = JSON.parse(text.substr(47).slice(0, -2));
 				var foundIndex = -1;
-
+				console.log(json.table);
 				json.table.rows.forEach(function (row, rowIndex) {
 					if (row.c[1].v === uuidd) {
 						foundIndex = rowIndex;
@@ -100,11 +113,12 @@ $(document).ready(function () {
 
 				if (foundIndex > -1) {
 					// uuid found, display info
-					// json.table.rows[foundIndex].c.forEach(function (col, colIndex) {
-					//   console.log(col.v, colIndex);
-					//  });
-					$("#txt1").html(json.table.rows[foundIndex].c[3].v);
+					json.table.rows[foundIndex].c.forEach(function (col, colIndex) {
+						console.log(col, colIndex);
+					});
+					$("#txt6").html(json.table.rows[foundIndex].c[0].f);
 					$("#txt2").html(json.table.rows[foundIndex].c[2].v);
+					$("#txt1").html(json.table.rows[foundIndex].c[3].v);
 					$("#txt3").html(json.table.rows[foundIndex].c[4].v);
 					$("#txt4").html(json.table.rows[foundIndex].c[5].v);
 					$("#txt5").html(json.table.rows[foundIndex].c[6].v);
