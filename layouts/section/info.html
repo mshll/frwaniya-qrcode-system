@@ -1,58 +1,56 @@
 {{ define "main" -}}
 
 <section class="hero">
-    <h5 class="small-title"><small>مدرسة الفروانية الإبتدائية للبنات</small></h5>
-    <h1 class="main-title">إذن زيارة للمدرسة</h1>
+	<h5 class="small-title"><small>مدرسة الفروانية الإبتدائية للبنات</small></h5>
+	<h1 class="main-title">إذن زيارة للمدرسة</h1>
 
-    <div class="mt-5">
-        <img class="qr-img" src="">
-        <p class="qr-note">الرجاء حفظ هذا الباركود وابرازه حين قدومكم</p>
-    </div>
-    <div class="form-container d-flex" id="info-form-container">
+	<div class="mt-5">
+		<img class="qr-img" src="" />
+		<p class="qr-note">الرجاء حفظ هذا الباركود وابرازه حين قدومكم</p>
+	</div>
+	<div class="form-container d-flex" id="info-form-container">
+		<div class="d-flex bd-highlight text-container">
+			<div class="text-white-50 text-titles p-1 bd-highlight">الإسم:</div>
+			<div id="txt1" class="text-rec p-1 bd-highlight"></div>
+		</div>
 
-        <div class="d-flex bd-highlight text-container">
-            <div class="text-muted text-titles p-1 bd-highlight">الإسم:</div>
-            <div id="txt1" class="text-rec p-1 bd-highlight"></div>
-        </div>
-        
-        <div class="d-flex bd-highlight text-container">
-            <div class="text-muted text-titles p-1 bd-highlight">الرقم المدني:</div>
-            <div id="txt2" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
-        </div>
-        
-        <div class="d-flex bd-highlight text-container">
-            <div class="text-muted text-titles p-1 bd-highlight">الصف:&nbsp;&nbsp;</div>
-            <div id="txt3" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
-        </div>
+		<div class="d-flex bd-highlight text-container">
+			<div class="text-white-50 text-titles p-1 bd-highlight">الرقم المدني:</div>
+			<div id="txt2" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
+		</div>
 
-        <div class="d-flex bd-highlight text-container">
-            <div class="text-muted text-titles p-1 bd-highlight">الشعبة:</div>
-            <div id="txt4" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
-        </div>
+		<div class="d-flex bd-highlight text-container">
+			<div class="text-white-50 text-titles p-1 bd-highlight">الصف:&nbsp;&nbsp;</div>
+			<div id="txt3" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
+		</div>
 
-        <div class="d-flex bd-highlight text-container">
-            <div class="text-muted text-titles p-1 bd-highlight">سبب الزيارة:</div>
-            <div id="txt5" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
-        </div>
+		<div class="d-flex bd-highlight text-container">
+			<div class="text-white-50 text-titles p-1 bd-highlight">الشعبة:</div>
+			<div id="txt4" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
+		</div>
 
-    </div>
+		<div class="d-flex bd-highlight text-container">
+			<div class="text-white-50 text-titles p-1 bd-highlight">سبب الزيارة:</div>
+			<div id="txt5" class="text-rec p-1 flex-grow-1 bd-highlight"></div>
+		</div>
+	</div>
 
-    <footer id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    
-                    {{"<!-- copyright -->" | safeHTML}}
-                    <div class="text-center">
-                        <p>
-                            <small>Built by <a href="https://mshl.me"><u>mshl.me</u></a></small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					{{"<!-- copyright -->" | safeHTML}}
+					<div class="text-center">
+						<p>
+							<small>
+								&copy; 2021. Built by <a href="https://mshl.me"><u>mshl.me</u></a>
+							</small>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </section>
 
 {{- end }}
