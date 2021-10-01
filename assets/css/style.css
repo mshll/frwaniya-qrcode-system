@@ -133,18 +133,19 @@ section {
 }
 
 .text-container {
-	align-items: flex-end;
+	align-items: baseline;
 	justify-content: space-between;
 	margin-right: 0;
 }
 
 .text-titles {
-	flex: 1;
+	flex: 0.5;
+	text-align: left;
 }
 
 .text-rec {
 	font-weight: 600;
-	flex: 2.5 !important;
+	flex: 1 !important;
 }
 
 .qr-note {
